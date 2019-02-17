@@ -1,0 +1,41 @@
+{
+  "name": "DDD",
+  "version": "1.0.0",
+  "description": "DDD school project",
+  "main": "app.js",
+  "author": "HLD & DM",
+  "license": "ESGI",
+  "engines": {
+    "node": "^9.4.0",
+    "npm": "^5.6.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^4.12.4",
+    "npm": "^5.4.2"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.2",
+    "kerberos": "0.0.19",
+    "mocha": "^2.4.5",
+    "mock-require": "^1.2.1",
+    "mockery": "^1.4.0",
+    "mongo-express": "^0.29.20",
+    "nodemon": "^1.12.1",
+    "supertest": "^1.1.0",
+    "supertest-as-promised": "^2.0.2"
+  },
+  "pre-commit": [
+    "env"
+  ],
+  "scripts": {
+    "start": "node app.js",
+    "serve": "node ./node_modules/mongo-express/app.js -u admin -p admin -d ddd | node ./node_modules/nodemon/bin/nodemon.js app.js",
+    "test": "./node_modules/.bin/istanbul cover _mocha -- --recursive",
+    "single-test": "./node_modules/.bin/_mocha test/**/*services*/**.js",
+    "mongoui": "node ./node_modules/mongo-express/app.js -u admin -p admin -d ddd"
+  }
+}
